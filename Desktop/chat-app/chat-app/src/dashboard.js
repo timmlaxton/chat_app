@@ -7,6 +7,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Chip from '@material-ui/core/Chip';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+import {CTX} from './store'
 
 
 const useStyles = makeStyles(theme => ({
@@ -43,6 +46,12 @@ export default function Dashboard() {
 
   const classes= useStyles();
 
+  const [allChats] = React.useContext(CTX);
+
+  console.log({allChats});
+
+  const [textValue, changeTextValue] = React.useState('')
+
   return (
     <div>
     <Paper className={classes.root}>
@@ -69,14 +78,21 @@ export default function Dashboard() {
       {
         [{from: 'user', msg: 'alright'}].map((chat, i) => (
           <div className={classes.flex} key={i}>
-          <Chip label={chat. from} className={classes.chip} />
-          <Typography variant='p'>{chat.msg}</Typography>
+          <Chip label={chat.from} className={classes.chip} />
+          <Typography variant='body1'>{chat.msg}</Typography>
           </div>
         ))
       }
       </div>
       </div>
       <div className={classes.flex}>
+      <TextField label="Send chat"
+      className={classes.chatBox}
+      value={textValue}
+      onChange={e => changeTextValue(e.target.value)}
+      />
+
+
       <Button variant="contained">Send</Button>
 
       </div>
