@@ -1,8 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +18,8 @@ const useStyles = makeStyles(theme => ({
   },
   topicsWindow: {
     width: '30%',
-    height: '300px'
+    height: '300px',
+    borderRight: '1px solid grey'
 
   },
   chatWindow: {
@@ -44,7 +48,12 @@ export default function Dashboard() {
         Topic Placeholder
       </Typography>
       <div className={classes.flex}>
+        <div className={classes.topicsWindow}>
 
+      </div>
+      <div className={classes.chatWindow}>
+
+      </div>
       </div>
       <div className={classes.flex}>
 
