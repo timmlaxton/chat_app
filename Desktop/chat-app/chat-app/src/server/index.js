@@ -1,10 +1,10 @@
 var app = require('express')();
-var http = require('http')createServer(app);
+var http = require('http').createServer(app);
 
 app.get('/', function(req, res){
   res.send('<h1>Hiya<h1>');
 });
 
-http.listen(3000, function(){
+http.listen(3001, function(){
   console.log('listening on :3001');
 });
