@@ -25,7 +25,7 @@ class app extends Component {
   }
 
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons;
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({persons: persons});
   }
@@ -42,7 +42,8 @@ togglePersonHandler = () => {
         font: 'inherit',
         border: "3px solid black", 
         padding: '8px',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        position: 'center'
       };
 
       let persons = null;
