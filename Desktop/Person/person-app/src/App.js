@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium from 'radium';
 import Person from './Person/Person';
 
 class app extends Component {
@@ -92,6 +91,7 @@ togglePersonHandler = () => {
       
 
     return (
+      
     <div className="App">
       <h1>Person</h1>
         <p className={classes.join('')}>Learning</p>
@@ -100,6 +100,7 @@ togglePersonHandler = () => {
         onClick={this.togglePersonHandler}>Toggle Persons</button>
         {persons}
         </div>
+       
         );
     }
 }
@@ -107,7 +108,7 @@ togglePersonHandler = () => {
 
 
  
-export default Radium(app);
+export default app;
 
 
 
