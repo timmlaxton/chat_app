@@ -1,0 +1,184 @@
+.header-color {
+background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.home-grid {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.banner-text {
+text-align: center;
+
+top: 0;
+left: 0;
+background-color: white;
+opacity: .8;
+width: 50%;
+margin: auto;
+vertical-align: middle;
+}
+
+.contact-body {
+  margin:auto;
+  background: white;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.contact-grid {
+  text-align: center;
+  justify-content: content;
+  width: 80%;
+  height: 550px;
+  background: white;
+  color: black;
+  border: 5px black;
+  margin-bottom: 20px;
+}
+
+.man-img {
+  display: flex;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  padding-top: 5em;
+  position: center;
+
+}
+
+.about-me-header{
+  text-align: center;
+
+}
+
+.about-me-text {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.profile-image {
+
+  display: flex;
+  display:block;
+  float: left;
+  height: 40%;
+  width: 35%;
+  padding-top: 5em;
+  position: center;
+
+}
+
+.project-one {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-two {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-three {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-four {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-five {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-six {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-seven {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-eight {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.project-nine {
+  display: flex;
+  float: left;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  grid-gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  vertical-align: middle;
+  color: black;
+  margin: auto;
+}
+
+.social-links {
+  color: black;
+  font-size: 3em;
+  padding: 8px;
+}
+
+.banner-text p {
+  color: black;
+  margin: auto;
+  position: bottom;
+  vertical-align: middle;
+  padding: 1em;
+}
