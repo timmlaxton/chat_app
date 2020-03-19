@@ -67,7 +67,7 @@ class Projects extends Component {
         <Card shadow={5} style={{minWidth: '450', margin: 'auto'}}>
           <CardTitle style={{color: 'black', height: '176px', background: 'url(https://www.whatsonnetwork.co.uk/uploads/800x600/2c58ac3ef191c9e1bc1e8b2e6a145420.jpg) center / cover'}}>Summer Nights Festival</CardTitle>
           <CardText>
-           Summer Nights Festival Website
+           Summer Nights Festival Websites
           </CardText>
           <CardActions border>
             <Button href="https://github.com/timmlaxton/History_Education_App" colored>GitHub</Button>
