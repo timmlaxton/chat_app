@@ -23,8 +23,69 @@ const {admin} = require('./middleware/admin');
 const {User} = require('./models/user');
 const {Publisher} = require('./models/publisher');
 const {Genre} = require('./models/genre');
+const {Product} = require('./models/product');
+const {Character} = require('./models/character');
+
+// character
+app.post('/api.product/character',auth,admin,(req,res)=>{
+
+    const character = new Character(req.body);
+
+    character.save((err,doc) => {
+        if(err) return res.json({success:false,err});
+        res.status(200).json({
+            success:true,
+            character:doc
+        })
+    })
+});
+
+app.get('/api/product/characters',(req,res)=> {
+    Character.find({},(err,characters)=>{
+        if(err) return res.status(400).send(err);
+        res.status(200).send(characters)
+
+    })
+})
 
 
+
+
+// products
+
+app.get('/api/products/articles_by_id',(req,res)=> {
+    let type = req.query.type;
+    let items = req.query.id;
+
+    if(type === "array"){
+        let ids = req.query.id.split(',');
+        items = [];
+        items = ids.map(item=>{
+            return mongoose.Types.ObjectId(item)
+        })
+    }
+
+    Product.
+    find({'_id':{$in:items}}).
+    populate('genre').
+    populate('publisher').
+    populate('character').
+    exec((err,docs)=>{
+        return res.status(200).send(docs)
+    })
+})
+
+app.post('/api/product/article',auth,admin,(req,res)=>{
+    const product = new Product(req.body);
+
+    product.save((err,doc)=>{
+        if(err) return res.json({success:false,err});
+        res.status(200).json({
+            success:true,
+            article: doc
+        })
+    })
+})
 
 //Genre
 
@@ -70,6 +131,8 @@ app.get('/api/product/publishers',(req,res)=>{
         res.status(200).send(publishers)
     })
 })
+
+
 // USERS //
 
 app.get('/api/users/auth',auth,(req,res)=>{
