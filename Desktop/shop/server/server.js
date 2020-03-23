@@ -15,28 +15,61 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 //middleware
-const {auth} = require('./middleware/auth')
+const {auth} = require('./middleware/auth');
+const {admin} = require('./middleware/admin');
 
 //Models
 
 const {User} = require('./models/user');
-const {Brand} = require('/models/brand');
+const {Publisher} = require('./models/publisher');
+const {Genre} = require('./models/genre');
 
-//Brand
 
-app.post('/api/product/brand',auth,(req,res)=>{
-    const brand = new Brand(req.body);
 
-    brand.save((err,doc)=>{
+//Genre
+
+app.post('/api/product/genre',auth,admin,(req,res)=> {
+
+    const genre = new Genre(req.body);
+
+    genre.save((err,doc)=> {
+        if(err) return res.json({success:false,err});
+        res.status(200).json({
+            success:true,
+            genre: doc
+        })
+    })
+
+});
+
+app.get('/api/product/genres',(req,res)=> {
+    Genre.find({},(err,genres)=>{
+        if(err) return res.status(400).send(err);
+        res.status(200).send(genres)
+
+    })
+})
+
+//Publisher
+
+app.post('/api/product/publisher',auth,admin,(req,res)=>{
+    const publisher = new Publisher(req.body);
+
+    publisher.save((err,doc)=>{
         if(err) return res.json({success:false,err});
             res.status(200).json({
                 success: true,
-                brand:doc
+                publisher:doc
             })
     })
 })
 
-
+app.get('/api/product/publishers',(req,res)=>{
+    Publisher.find({},(err,publishers)=>{
+        if(err) return res.status(400).send(err);
+        res.status(200).send(publishers)
+    })
+})
 // USERS //
 
 app.get('/api/users/auth',auth,(req,res)=>{

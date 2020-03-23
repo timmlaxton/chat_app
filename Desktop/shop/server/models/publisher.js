@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const brandSchema = mongoose.Schema({
+const publisherSchema = mongoose.Schema({
     name:{
         required: true,
         type: String,
@@ -9,7 +9,7 @@ const brandSchema = mongoose.Schema({
     }
 });
 
-const Publisher = mongoose.model('Brand', brandSchema);
+const Publisher = mongoose.model('Publisher', publisherSchema);
 
 
-module.exports = {brand}
+module.exports = {Publisher}
