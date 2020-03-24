@@ -26,6 +26,14 @@ const {Genre} = require('./models/genre');
 const {Product} = require('./models/product');
 const {Character} = require('./models/character');
 
+app.all('/', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+ 
+    next();
+});
+
+
 // character
 app.post('/api.product/character',auth,admin,(req,res)=>{
 
@@ -52,6 +60,28 @@ app.get('/api/product/characters',(req,res)=> {
 
 
 // products
+
+//by arrival
+
+app.get('/api/product/articles',(req,res)=>{
+
+    let order = req.query.order ? req.query.order : 'asc';
+    let sortBy = req.query.sortyBy ? req.query.sortBy : "_id ";
+    let limit = req.query.limit ? parseInt(req.query.limit) : 100;
+
+    Product.find().
+    populate('genre').
+    populate('publisher').
+    populate('character').
+    sort([[sortBy,order]]).
+    limit(limit).
+    exec((err,articles)=>{
+        if(err) return res.status(400).send(err);
+        res.send(articles)
+    })
+
+
+})
 
 app.get('/api/products/articles_by_id',(req,res)=> {
     let type = req.query.type;
