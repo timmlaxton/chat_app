@@ -12,7 +12,7 @@ class Layout extends Component {
                 <Header/>   
                 <div className="page_container">
                     {this.props.children}
-                <div> HOME </div>
+                <div>  </div>
                 </div>
                 <Footer/>
             </div>

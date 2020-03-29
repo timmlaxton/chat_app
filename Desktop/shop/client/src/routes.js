@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Register from './components/register';
+import Register from './components/Register_login/register';
 
 import Layout from './hoc/layout';
 import Home from './components/Home';
